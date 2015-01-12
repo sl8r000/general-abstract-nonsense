@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>New Data Scientist</title>
+ <link href="www.slaterstich.com/atom.xml" rel="self"/>
+ <link href="www.slaterstich.com/"/>
+ <updated>2015-01-12T12:17:00-08:00</updated>
+ <id>www.slaterstich.com</id>
+ <author>
+   <name>Ian Camporez Brunelli</name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>Higher Arithmetic</title>
+   <link href="www.slaterstich.com/blog/intro-ant"/>
+   <updated>2015-01-12T00:00:00-08:00</updated>
+   <id>www.slaterstich.com/blog/intro-ant</id>
+   <content type="html">&lt;h1 id=&quot;which-primes-are-sums-of-two-squares&quot;&gt;Which Primes are Sums of Two Squares?&lt;/h1&gt;
+&lt;p&gt;Consider the primes, \(2, 3, 5, 7, 11, \ldots\). Which can be written as a sum of two squared integers? The prime \(2\) can, since \(2 = 1^2 + 1^2\). But \(3\) cannot, since \(3 &amp;gt; 1^2 + 1^2\) and \(3 &amp;lt; 1^2 + 2^2\). What about the rest? Let’s start a table:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;prime&lt;/th&gt;
+      &lt;th&gt;sum of two squares?&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;\(1^2 + 2^2\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;no&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;\(1^2 + 2^2\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;no&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;11&lt;/td&gt;
+      &lt;td&gt;no&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;\(3^2 + 2^2\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;17&lt;/td&gt;
+      &lt;td&gt;\(4^2 + 1^2\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;19&lt;/td&gt;
+      &lt;td&gt;no&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;23&lt;/td&gt;
+      &lt;td&gt;no&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;29&lt;/td&gt;
+      &lt;td&gt;\(5^2 + 2^2\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;31&lt;/td&gt;
+      &lt;td&gt;no&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;37&lt;/td&gt;
+      &lt;td&gt;\(6^2 + 1^2\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;41&lt;/td&gt;
+      &lt;td&gt;\(4^2 + 5^2\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;43&lt;/td&gt;
+      &lt;td&gt;no&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Here’s where things get interesting: There’s a very simple rule that determines whether a prime is a sum of two squares, a rule that first seems &lt;em&gt;entirely unrelated&lt;/em&gt; to primes &lt;em&gt;or&lt;/em&gt; squares. Look at the remainders modulo \(4\); if you haven’t seen this bit of mathematics before, it’s worth taking a moment to do a few computations and see if you can guess the rule.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;prime&lt;/th&gt;
+      &lt;th&gt;sum of two squares?&lt;/th&gt;
+      &lt;th&gt;remainder modulo 4&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;\(1^2 + 2^2\)&lt;/td&gt;
+      &lt;td&gt;\(2\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;no&lt;/td&gt;
+      &lt;td&gt;\(3\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;\(1^2 + 2^2\)&lt;/td&gt;
+      &lt;td&gt;\(1\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;no&lt;/td&gt;
+      &lt;td&gt;\(3\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;11&lt;/td&gt;
+      &lt;td&gt;no&lt;/td&gt;
+      &lt;td&gt;\(3\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;\(3^2 + 2^2\)&lt;/td&gt;
+      &lt;td&gt;\(1\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;17&lt;/td&gt;
+      &lt;td&gt;\(4^2 + 1^2\)&lt;/td&gt;
+      &lt;td&gt;\(1\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;19&lt;/td&gt;
+      &lt;td&gt;no&lt;/td&gt;
+      &lt;td&gt;\(3\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;23&lt;/td&gt;
+      &lt;td&gt;no&lt;/td&gt;
+      &lt;td&gt;\(3\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;29&lt;/td&gt;
+      &lt;td&gt;\(5^2 + 2^2\)&lt;/td&gt;
+      &lt;td&gt;\(1\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;31&lt;/td&gt;
+      &lt;td&gt;no&lt;/td&gt;
+      &lt;td&gt;\(3\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;37&lt;/td&gt;
+      &lt;td&gt;\(6^2 + 1^2\)&lt;/td&gt;
+      &lt;td&gt;\(1\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;41&lt;/td&gt;
+      &lt;td&gt;\(4^2 + 5^2\)&lt;/td&gt;
+      &lt;td&gt;\(1\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;43&lt;/td&gt;
+      &lt;td&gt;no&lt;/td&gt;
+      &lt;td&gt;\(3\)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;It looks like &lt;strong&gt;a prime \(p\) is a sum of two squares if and only if \(p \neq 3 \mod 4\)&lt;/strong&gt;. This, at first, seems pretty weird. What does being a sum of two squares have to do with being \(3\) modulo \(4\)? And what does any of this have to do with primes? To get answers, we’ll have to ascend from the set of integers \(\mathbb{Z}\) to a higher, more “complete” set of integers embedded within the complex numbers \(\mathbb{C}\). This set, called the Gaussian Integers, has its own arithmetic and its own “higher” primes - which will be the key to understanding our two squares problem.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-gaussian-integers&quot;&gt;The Gaussian Integers&lt;/h1&gt;
+
+&lt;p&gt;The first key discovery on our path is a rephrasing of the “is a sum of two squares” condition. Consider the complex numbers \(a + bi\) where \(a\) and \(b\) are both integers. This set is called the &lt;strong&gt;Gaussian Integers&lt;/strong&gt; and it has many of the same properties that the set of “familiar” integers \(\ldots, -2, -1, 0, 1, 2, \ldots\) has; we’ll get into that in a moment. For now, the key point is that an integer \(n\) is a sum of two squares \(a\) and \(b\) if and only if \(n = (a + bi)(a - bi)\). In other words, being a sum of two squares is equivalent to factorizing as a Gaussian integer and its complex conjugate, \(n = z\cdot \overline{z}\).&lt;/p&gt;
+
+&lt;p&gt;This is an important idea. Just a few sentances ago, it was baffling why being a sum of two squares should have anything to do with primes or divisibility. But now we have a clue: Being writable as a sum of two squares in \(\mathbb{Z}\) is related to divisibility in \(\mathbb{Z} + i\mathbb{Z}\), the Gaussian integers.&lt;/p&gt;
+
+&lt;p&gt;So what does divisibility in\(\mathbb{Z} + i\mathbb{Z}\) look like? Interestingly, concepts from the integers \(\mathbb{Z}\) carry over nicely. For example:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Divisability:&lt;/strong&gt; In \(\mathbb{Z}\) we say that “\(n\) divides \(m\)” when there exists some integer \(k\) such that \(nk = m\). For example, \(6\) divides \(12\) because there exists an integer \(k=2\) such that \(6\cdot 2 = 12\). We write \(n \mid m\) as shorthand for “\(n\) divides \(m\)”. In \(\mathbb{Z} + i\mathbb{Z}\), we use the same definition: For \(\alpha, \beta \in \mathbb{Z} + i\mathbb{Z}\), we say that \(\alpha \mid \beta\) when there exists \(\gamma \in \mathbb{Z} + i \mathbb{Z}\) such that \(\alpha \gamma = \beta\). For example, \(1 + i\) divides \(-2 + 8i\) because \((1 + i)(3 + 5i) = (-2 + 8i)\).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Primality:&lt;/strong&gt; We call an integer \(n \in \mathbb{Z}\) prime if whenever \(n \mid ab\) for \(a, b \in \mathbb{Z}\) (that is, “whenever \(n\) divides \(ab\) for \(a\) and \(b\) in \(\mathbb{Z}\)), we have that \(n \mid a\) or \(n \mid b\). For example, \(3\) is a prime since if \(3\) divides \(ab\), then either \(3\) divides \(a\) or \(3\) divides \(b\); notice that \(6\), a non-prime, doesn’t have this property (for example, \(6\) divides \(2\cdot 3\) but it doesn’t divide \(2\) or \(3\).) In the Gaussian integers, the definition is the same: \(\eta \in \mathbb{Z} + i\mathbb{Z}\) is “prime” if whenever \(\eta \mid \alpha \beta\) for \(\alpha, \beta \in \mathbb{Z} + i\mathbb{Z}\) we have that \(\eta \mid \alpha\) or \(\eta \mid \beta\). For example: \(1 + 2i\) is prime (it’s hard to see why just yet) but \(-2 + 8i = (1 + i)(3+5i)\) is not.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Prime Factorization:&lt;/strong&gt; In \(\mathbb{Z}\), every integer factors as a product of primes in a “pretty much unique” way. For example, \(12 = 2^23 = (-1)^22^23 = (-1)^42^23 = \cdots\). The same fact is true in \(\mathbb{Z} + i\mathbb{Z}\), every member of the set factors “pretty much uniquely” as a product of primes. More precisely, any \(alpha \in \mathbb{Z} + i\mathbb{Z}\) is writable as \(alpha = u\prod_i \pi_i^{e_i}\) where \(u\) is either \(1\), \(-1\), \(i\), or \(-i\), the \(\pi_i\) are all primes in \(\mathbb{Z} + i\mathbb{Z}\), and the \(e_i\) are positive integers (normal integers, not Gaussian integers). This factorization is unique, up to \(u\).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As promised, here’s a proof that prime factorization holds in \(\mathbb{Z} + i\mathbb{Z}\), though again: On a first pass, you may want to simply trust this fact and skip to the next section.&lt;/p&gt;
+
+&lt;div class=&quot;message&quot;&gt;\(\mathbb{Z} + i\mathbb{Z}\) is a unique factorization domain.&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Consider the norm function \(N(a + bi) = \sqrt{a^2 + b^2}\), also known as the complex absolute value. This function is multiplicative: \(N(\alpha \beta) = N(\alpha)N(\beta)\). For \(\eta \in \mathbb{Z} + i\mathbb{Z}\), the value of \(N(\eta)\) is always a non-negative integer. \(N(\eta) = 0\) if and only if \(\eta = 0\), and \(N(\eta) = 1 \) if and only if \(\eta \in \{1, -1, i, -i\}\). So if \(\alpha = \beta \gamma\) for \(\beta\) and \(\gamma\) both nonzero, and both not in \(\{1, -1, i, -i\}\), then \(N(\beta) \leq (\alpha)\) and \(N(\gamma) \leq N(\alpha)\). In other words, if \(\alpha\) factors nontrivially, then the norms of the factors are smaller than the norm of \(\alpha\). This is really the key observation, the one that leads to the proof. For a given \(\alpha \in \mathbb{Z} + i\mathbb{Z}\), either \(\alpha\) is prime or else \(\alpha = \alpha_1\alpha_2\) nontrivially. Either \(\alpha_1\) is prime or \(\alpha_1 = \alpha_{1,1}\alpha_{1,2}\) nontrivially. Either \(\alpha_{1, 1}\) is prime or… etc. Keep factoring until we hit the primes. We have to hit primes eventually since \(N(\alpha) &amp;gt; N(\alpha_1) &amp;gt; N(\alpha_{1,1}) &amp;gt; \cdots &amp;gt; 0\).
+More generally, any “domain” with a function like the norm (a “Euclidean function”) is called a Euclidean domain; every Euclidean domain is something called a “principal ideal domain”; every principal ideal domain is a “unique factorization domain”, meaning that prime factorization holds. So all of this can be generalized quite a bit.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;mathbbzs-primes-in-mathbbz--imathbbz&quot;&gt;\(\mathbb{Z}\)’s Primes in \(\mathbb{Z} + i\mathbb{Z}\)&lt;/h1&gt;
+
+&lt;p&gt;Now that we know about “higher primes” in \(\mathbb{Z} + i\mathbb{Z}\), we can ask an interesting question: What happens to primes in \(\mathbb{Z}\) when we consider them as members of \(\mathbb{Z} + i\mathbb{Z}\)? This makes sense: Indeed, every \(n \in \mathbb{Z}\) is also an element of \(\mathbb{Z} + i\mathbb{Z}\), since \(n = n + 0i \in \mathbb{Z} + i\mathbb{Z}\). We have a notion of “primaility” both in \(\mathbb{Z}\) and in \(\mathbb{Z} + i\mathbb{Z}\). So it’s natural to ask: What happens to \(\mathbb{Z}\)’s primes in \(\mathbb{Z} + i\mathbb{Z}\)? Do they stay prime? Do they factor? It turns out the answer is:&lt;/p&gt;
+
+&lt;div class=&quot;message&quot;&gt;Let \(p \in \mathbb{Z}\) be a prime. In \(\mathbb{Z} + i\mathbb{Z}\),
+
+&lt;ul&gt;
+&lt;li&gt;If \(p = \pm 2\), then \(p = (1+i)(1-i)\) is not a prime.&lt;/li&gt;
+&lt;li&gt;If \(p \equiv 3 \mod 4\), then \(p\) is a prime.&lt;/li&gt;
+&lt;li&gt;If \(p \equiv 1 \mod 4\), then \(p\) is not a prime, and in fact \(p\) factors as \(p = (a + bi)(a - bi) = a^2 + b^2\).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;This theorem is what we’ve been waiting for: &lt;strong&gt;A prime \(p \in \mathbb{Z}\) is writable as a sum of two squares if and only if \(p\) ceases to be a prime in \(\mathbb{Z} + i\mathbb{Z}\)&lt;/strong&gt;. And \(p\) is prime in \(\mathbb{Z} + i\mathbb{Z}\) if and only if \(p \neq 3 \mod 4\). So the one-surprising connection between primes, remainders modulo \(4\), and sums of squares is now clear, and we have an answer to our origional question! Here’s a sketch of the proof, done point by point:&lt;/p&gt;
+
+&lt;div class=&quot;message&quot;&gt;
+If \(p = \pm 2\), then \(p = (1+i)(1-i)\) is not a prime.
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This is clear.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;message&quot;&gt;
+If \(p \equiv 3 \mod 4\), then \(p\) is a prime.
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Suppose to the contrary that \(p = \alpha \beta\) for \(\alpha, \beta \notin \{1, -1, i, -i\}\). Then \(\alpha = \overline{\beta}\). Indeed, if \(\alpha = a_1 + a_2 i\) and \(\beta = b_1 + b_2 i\), then \(\alpha\beta = a_1 b_1 - a_2 b_2 + (a_1 b_2 + a_2 b_1)i\) is a real number, so \(a_1 b_2 + a_2 b_1 = 0\). This implies that \(a_1 = b_1\) and \(a_2 = - a_2\), as desired. So, if \(p\) factors, then \(p = a^2 + b^2\). But this is impossible since \(p \equiv 3 \mod 4\) and \(a^2 + b^2\) is either \(0\), \(1\), or \(2\) modulo \(4\) for any values of \(a\) and \(b\). Hence we have obtained a contradiction from the assumption that \(p = \alpha \beta\) for \(\alpha, \beta \notin \{1, -1, i, -i\}\), so this assumption must be incorrect and hence \(p\) is prime.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;message&quot;&gt;
+If \(p \equiv 3 \mod 4\), then \(p\) is not a prime, and in fact \(p\) factors as \(p = (a + bi)(a - bi) = a^2 + b^2\).
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This is the most difficult part of the proof, and I’ll omit a full discussion. The breakthrough observation is that if \(p = 1 + 4n\), then \(p\) divides \(m^2 + 1\) for \(m = (2n)!\) (Wilson’s theorem). So \(p \mid (m+i)(m-i)\). But \(p\) does not divide \(m+i\) or \(m-i\) since \(p\) divides neither \(i\) nor \(m = (2n)!\) Hence \(p\) is not prime.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;going-further&quot;&gt;Going Further&lt;/h1&gt;
+
+&lt;p&gt;We saw that the Gaussian integers \(\mathbb{Z} + i\mathbb{Z}\) were extremely useful in answering questions that, at first, seemed to solely be about \(\mathbb{Z}\). One might wonder whether there are other “higher integers” that could be similarly useful. Indeed there are! A branch of mathematics called “algebraic number theory” is partially about these higher integers and their relationship with the familiar integers \(\mathbb{Z}\).&lt;/p&gt;
+
+&lt;p&gt;We’ve already seen one interesting way in which the “higher integers” interact with \(\mathbb{Z}\): The primes in \(\mathbb{Z}\) either remain prime or “split” when we ascend to \(\mathbb{Z} + i\mathbb{Z}\). Analysis of this sort of prime “ramification” in a higher number ring is a common pattern in algebraic number theory. Another general pattern is symmetry in the roots of polynomials over \(\mathbb{Z}\). We caught a glimpse of this when we talked about the norm function, but there’s a &lt;em&gt;lot&lt;/em&gt; more out there in a field of mathematics called Galois theory. For a short introduction, check out this &lt;a href=&quot;https://www.youtube.com/watch?v=FfVR4O__LXY&quot;&gt;short video series by yours truly&lt;/a&gt;. Another pattern is a sort of topological, geometric perspective: “higher integers” over \(\mathbb{Z}\) are akin to functions between topological spaces like spheres, paths, tori, etc. &lt;a href=&quot;http://en.wikipedia.org/wiki/Ramification&quot;&gt;Really!&lt;/a&gt; This is a very deep part of mathematics called “arithmetic geometry”. Other patterns with which I am less familiar, e.g. class field theory, abound as well!&lt;/p&gt;
+</content>
+ </entry>
+ 
+
+</feed>
