@@ -19,7 +19,7 @@ author:
 
 paginate:	8
 
-baseurl:        /new_data_scientist
+baseurl:        /general-abstract-nonsense
 
 # Custom vars
 icon:		/assets/images/ds-logo.png
